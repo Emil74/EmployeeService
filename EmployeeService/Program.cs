@@ -38,6 +38,7 @@ namespace EmployeeService
             #endregion
 
             #region Configure Repositories
+            builder.Services.AddSingleton<IAuthenticateService, AuthenticateService>();
 
             builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             builder.Services.AddScoped<IEmployeeTypeRepository, EmployeeTypeRepository>();
