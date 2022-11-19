@@ -13,7 +13,7 @@ namespace EmployeeService.Services.Impl
 {
     public class AuthenticateService : IAuthenticateService
     {
-        private const string SecretCode = "kYp3s6v9y/B?E(H+";
+        public const string SecretCode = "kYp3s6v9y/B?E(H+";
 
         private readonly Dictionary<string, SessionDto> _sessions =
             new Dictionary<string, SessionDto>();
@@ -27,7 +27,37 @@ namespace EmployeeService.Services.Impl
 
         public SessionDto GetSessionInfo(string sessionToken)
         {
-            throw new NotImplementedException();
+            SessionDto? sessionDto;
+            lock (_sessions)
+            {
+                _sessions.TryGetValue(sessionToken, out sessionDto);
+            }
+
+            if (sessionDto == null)
+            {
+                using IServiceScope scope = _serviceScopeFactory.CreateScope();
+                EmployeeServiceDbContext context = scope.ServiceProvider.GetRequiredService<EmployeeServiceDbContext>();
+
+                AccountSession? session = context
+                                         .AccountSessions
+                                         .FirstOrDefault(item => item.SessionToken == sessionToken);
+                if (session == null)
+                    return null!;
+
+                Account account = context.Accounts.FirstOrDefault(item => item.AccountId == session.AccountId)!;
+
+                sessionDto = GetSessionDto(account, session);
+
+                if (sessionDto != null)
+                {
+                    lock (_sessions)
+                    {
+                        _sessions[sessionToken] = sessionDto;
+                    }
+                }
+            }
+
+            return sessionDto!;
         }
 
         public AuthenticationResponse Login(AuthenticationRequest authenticationRequest)
@@ -85,7 +115,7 @@ namespace EmployeeService.Services.Impl
             return new SessionDto
             {
                 SessionId = accountSession.SessionId,
-                SessionToken = accountSession.SessionToken,
+                SessionToken = accountSession.SessionToken!,
                 Account = new AccountDto
                 {
                     AccountId = account.AccountId,

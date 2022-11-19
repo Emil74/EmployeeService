@@ -13,7 +13,7 @@ namespace EmployeeService.Utils
         public static (string passwordSalt, string passwordHash) CreatePasswordHash(string password)
         {
             byte[] buffer = new byte[16];
-            RNGCryptoServiceProvider? rNGCryptoServiceProviderrsa = new RNGCryptoServiceProvider();
+            RNGCryptoServiceProvider rNGCryptoServiceProviderrsa = new RNGCryptoServiceProvider();
             rNGCryptoServiceProviderrsa.GetBytes(buffer);
 
             string passwordSalt = Convert.ToBase64String(buffer);
