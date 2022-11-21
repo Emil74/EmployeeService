@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog.Web;
+using System.Net;
 using System.Text;
 
 namespace EmployeeService
@@ -20,6 +21,20 @@ namespace EmployeeService
         {
 
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.Listen(IPAddress.Any, 5001, listenOptions =>
+                {
+                    listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1AndHttp2;
+                    listenOptions.UseHttps(@"C:\Intel\testcert.pfx", "12345");
+                });
+            });
+
+            #region Configure gRPC
+            builder.Services.AddGrpc();
+
+            #endregion
 
             #region Configure Logging Services
 
@@ -141,8 +156,20 @@ namespace EmployeeService
 
             app.UseHttpLogging();
             app.UseAuthorization();
+            app.UseWhen(
+                ctx => ctx.Request.ContentType != "application/grpc",
+                builder =>
+                {
 
+                    builder.UseHttpLogging();
+                }
+                );
             app.MapControllers();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGrpcService<DictionariesService>();
+            });
 
             app.Run();
         }
