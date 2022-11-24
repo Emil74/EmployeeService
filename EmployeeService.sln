@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeService", "EmployeeService\EmployeeService.csproj", "{A32379F9-610A-4A43-AB80-EB93AB4F4442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeService", "EmployeeService\EmployeeService.csproj", "{A32379F9-610A-4A43-AB80-EB93AB4F4442}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeServiceData", "EmployeeServiceData\EmployeeServiceData.csproj", "{5E4A07B0-98FB-48AB-84CF-A691A6F8AA01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtSample", "JwtSample\JwtSample.csproj", "{46AD40BB-D218-4102-B10D-3D7EFB2BD191}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeClient", "EmployeeClient\EmployeeClient.csproj", "{74343E82-17A0-4EF3-8741-3B4BF703EB46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeServiceTests", "EmployeeServiceTests\EmployeeServiceTests.csproj", "{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{A32379F9-610A-4A43-AB80-EB93AB4F4442}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A32379F9-610A-4A43-AB80-EB93AB4F4442}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A32379F9-610A-4A43-AB80-EB93AB4F4442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E4A07B0-98FB-48AB-84CF-A691A6F8AA01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E4A07B0-98FB-48AB-84CF-A691A6F8AA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E4A07B0-98FB-48AB-84CF-A691A6F8AA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E4A07B0-98FB-48AB-84CF-A691A6F8AA01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46AD40BB-D218-4102-B10D-3D7EFB2BD191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AD40BB-D218-4102-B10D-3D7EFB2BD191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AD40BB-D218-4102-B10D-3D7EFB2BD191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AD40BB-D218-4102-B10D-3D7EFB2BD191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74343E82-17A0-4EF3-8741-3B4BF703EB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74343E82-17A0-4EF3-8741-3B4BF703EB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74343E82-17A0-4EF3-8741-3B4BF703EB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74343E82-17A0-4EF3-8741-3B4BF703EB46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
