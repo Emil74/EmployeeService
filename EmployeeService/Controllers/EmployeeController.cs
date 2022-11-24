@@ -44,7 +44,7 @@ namespace EmployeeService.Controllers
                 ).ToList());
         }
         [HttpPost("employe/create")]
-        public ActionResult<bool> CreateEmployee([FromQuery] int departmenId,
+        public ActionResult<bool> CreateEmployee([FromQuery] int departmenId,              //CreateEmployeeRequest
                                                  [FromQuery] int employeTypeId,
                                                  [FromQuery] string firstName,
                                                  [FromQuery] string surname,

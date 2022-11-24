@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeServiceData", "Empl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtSample", "JwtSample\JwtSample.csproj", "{46AD40BB-D218-4102-B10D-3D7EFB2BD191}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeClient", "EmployeeClient\EmployeeClient.csproj", "{74343E82-17A0-4EF3-8741-3B4BF703EB46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeClient", "EmployeeClient\EmployeeClient.csproj", "{74343E82-17A0-4EF3-8741-3B4BF703EB46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeServiceTests", "EmployeeServiceTests\EmployeeServiceTests.csproj", "{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{74343E82-17A0-4EF3-8741-3B4BF703EB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74343E82-17A0-4EF3-8741-3B4BF703EB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74343E82-17A0-4EF3-8741-3B4BF703EB46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BFF8C94-72B0-42C2-AF9E-605D075FEBBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
